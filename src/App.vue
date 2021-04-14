@@ -1,28 +1,54 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <News :apiKey="apiKey" />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import News from "./components/News.vue";
 
 export default {
-  name: "App",
+  name: 'app',
+   data: () => {
+     return {
+       apiKey:'' //Get api key from newsapi.org
+     }
+   },
   components: {
-    HelloWorld,
-  },
-};
+   News
+  }
+}
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss">
+ @import url('https://use.fontawesome.com/releases/v5.7.2/css/all.css');
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'NTR', sans-serif;
+    background: #eee;
 }
+
+#app {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  color: #333;
+  height: 100%;
+  background-color: #fff;
+  border: 2px solid #222;
+  border-radius: 20px;
+  box-shadow: 5px 10px 18px #222;
+  overflow-y: scroll;
+  overflow-x: hidden;
+} 
+  ::-webkit-scrollbar {
+    display: none;
+  }
 </style>
+
